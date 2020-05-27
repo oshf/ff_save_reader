@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Final Fantasy Save Reader</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/ff.js"></script>
+  <script>
+    function loadSave() {
+      file = document.getElementById('saveFile').files[0];
+      document.getElementById('fileName').innerHTML = file.name;
+
+      let reader = new FileReader();
+
+      reader.onload = function(e) {
+        var party = getStats(reader.result);
+        addData(party);
+      };
+
+      reader.readAsBinaryString(file);
+    }
+
+    function addData(party) {
+      document.getElementById("statusContainer").innerHTML = "";
+
+      for (i = 0; i < 4; i++) {
+        document.getElementById("statusContainer").innerHTML += '<div class="status"><div>' + party.names[i] + '<span>L ' + party.lvls[i] + '</span><br />' + party.classes[i] + '<br />HP<br /><span class="hp">' + party.HP[i] + '/' + party.maxHP[i] + '</span><br />STR.<span>' + party.str[i] + '</span><br />AGL.<span>' + party.agl[i] + '</span><br />INT.<span>' + party.int[i] + '</span><br />VIT.<span>' + party.vit[i] + '</span><br />LUCK<span>' + party.vit[i] + '</span><br />DAMAGE<span>' + party.dmg[i] + '</span><br />HIT %<span>' + party.hit[i] + '</span><br />ABSORB<span>' + party.abs[i] + '</span><br />EVADE %<span>' + party.evd[i] + '</span><br /></div></div>'
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>Final Fantasy (NES) Save Reader</h1>
+    <h2>Load your . sav files to view party stats!</h2>
+    <div id="fileContainer">
+      <label id="file">
+        Choose File
+        <input type="file" id="saveFile" accept=".sav" onchange="loadSave()">
+      </label>
+      <div id="fileName"></div>
+    </div>
+    <div id="statusContainer">
+    </div>
+  </div>
+</body>
+
+</html>

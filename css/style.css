@@ -1,0 +1,86 @@
+@font-face {
+  font-family: ffNES;
+  src: url(ff.ttf);
+}
+
+body {
+  color: #FFF;
+  font-family: ffNES;
+  font-size: 8px;
+  background-color: black;
+}
+
+#wrapper {
+  width: 400px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+h1,
+h2,
+#fileContainer,
+.hp {
+  text-align: center;
+}
+
+div span {
+  float: right;
+}
+
+#statusContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.hp {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+}
+
+.status {
+  border: solid 2px #747474;
+  box-shadow: 0 0 0 1px #FFF, 0 0 0 2px #747474;
+  width: 78px;
+  padding: 3px 4px 3px 4px;
+  background: #24188c;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: flex;
+  float: left;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.status div {
+  width: 78px;
+}
+
+#file {
+  border: solid 2px #747474;
+  box-shadow: 0 0 0 1px #FFF, 0 0 0 2px #747474;
+  padding: 4px 4px 4px 4px;
+  background: #24188c;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#saveFile {
+  display: none;
+}
+
+#fileName {
+  margin-top: 16px;
+}
+
+#fileContainer {
+  margin-top: 16px;
+}
