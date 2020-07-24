@@ -98,7 +98,7 @@ function getStats(sav) {
       10: "Wh. Wiz.",
       11: "Bl. Wiz."
     }
-    return tmp[num]
+    return tmp[num];
   }
 
   function getChar(hex) { // Char table generated from US version
